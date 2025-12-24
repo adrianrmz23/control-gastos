@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container mx-auto">
+        <h1 class="mb-4 text-3xl font-medium tracking-tight text-heading md:text-4xl lg:text-5xl text-center mt-4">Tu
+            Balance
+        </h1>
+        <h2 id="balance" class="text-center text-2xl font-bold">$0.00</h2>
+    </div>
+
+    <div class="container mx-auto mt-10 w-full md:w-1/2 max-w-64 mb-10">
+        <canvas id="grafica-pastel"></canvas>
+    </div>
+
+    <div class="container mx-auto columns-2">
+        <div class="text-center">
+            <p>Ingresos</p>
+            <p id="dinero-plus">$0.00</p>
+        </div>
+        <div class="text-center">
+            <p>Gastos</p>
+            <p id="dinero-minus">$0.00</p>
+        </div>
+    </div>
+
+    <div class="container mx-auto">
+        <ul id="lista-transacciones"></ul>
+    </div>
+
+    <div class="flex flex-col items-center justify-center mb-18 mt-18">
+        <h2 class="text-center text-2xl font-bold mb-6">
+            Agregar Transacción
+        </h2>
+
+        <form action="" id="formulario" class="w-full max-w-xl">
+
+            <div class="mt-4 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div class="sm:col-span-6">
+                    <div class="mt-2">
+                        <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 
+                        focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                            <input id="texto" type="text" name="texto" placeholder="Concepto" class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 
+                            placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div class="sm:col-span-6">
+                    <label for="cantidad" class="block text-sm/6 font-medium text-gray-900">
+                        Negativo - para gastos, Positivo + para ingresos
+                    </label>
+                    <div class="mt-2">
+                        <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 
+                        focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                            <input id="cantidad" type="number" name="cantidad" placeholder="Cantidad" class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 
+                            placeholder:text-gray-400 focus:outline-none sm:text-sm/6" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btn-add" class="mt-6 w-full rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold 
+            text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 
+            focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                Agregar transacción
+            </button>
+
+        </form>
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
